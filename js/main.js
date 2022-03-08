@@ -6,24 +6,26 @@
 
 
 // mi creo un timer che dopo 3 secondi mi fa visualizzare la scritta dal prompt
- 
- function numeriRandom(){ 
-    let max = 5; 
-    let random = []; 
-    for(let i = 0;i<max ; i++){ 
-        let temp = Math.floor(Math.random()*max); 
-        if(random.indexOf(temp) == -1)
-        { random.push(temp); } 
-        else i--; 
-    } console.log(random) 
-    } numeriRandom();
+/* let max = 5; 
+let random = [];  */
+const newDiv = document.createElement("div");
 
-        
-setTimeout(myfunction,3000)
+
+function numeriRandom(minvalue, maxvalue){ 
+if (isNaN(parseInt(minvalue)) || isNaN (parseInt(maxvalue))){
+
+}return (Math.floor(Math.random() * ((maxvalue + 1) - minvalue) + minvalue))
+
+}
+
+for( let i = 0; i < 5; i++){
+    console.log(numeriRandom(0, 100))
+}
+/* setTimeout(myfunction,3000)
 function myfunction(){
     parseInt(prompt("quali numeri ci sono?"));
 }  
- 
+  */
 
 /* function numeriRandom( min,max){
     random = Math.floor(Math.random() * ((max + 1) - min) + min);
