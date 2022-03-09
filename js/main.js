@@ -19,7 +19,7 @@ setTimeout(mytimer,3000,numbers)
 
 function mytimer(numeriCorrenti){
     
-    document.getElementById("listaNumeri").innerHTML ="";          /* cosi facendo rendiamo invisibile la lista dei numeri dopo i 30 secondi */
+    document.getElementById("listaNumeri").innerHTML ="";          
     const user =[];
     const numeriGiusti =[]
     for ( let i = 0; i < 5; i++){
