@@ -3,27 +3,54 @@
 //C) se sono stati inseriti i numeri giusti allora il console.log ti dirà quanti e quali numeri sono stati individuati
 
 
-
-
-function numeriRandom (minvalue, maxvalue){ 
-if (isNaN(parseInt(minvalue)) || isNaN (parseInt(maxvalue))){
-    
-}return (Math.floor(Math.random() * ((maxvalue + 1) - minvalue) + minvalue))
-
-} 
-
+const numbers = [];
+/* genero per  5 volte un array vuoti di numeri */
 for( let i = 0; i < 5; i++){
-    console.log(numeriRandom(0, 100))
-    let listaNumeri = numeriRandom(0, 100); 
-    document.getElementById("number").innerHTML= listaNumeri;
+    numbers.push(numeriRandom(numbers, 0 , 100));
 
-    
-}
-// mi creo un timer che dopo 3 secondi mi fa visualizzare la scritta dal prompt
-setTimeout(myfunction,3000)
-function myfunction(){
-    parseInt(prompt("quali numeri ci sono?"));
 }  
+document.getElementById("listaNumeri").innerHTML=numbers.join(",")
+console.log(numbers);
+
+
+
+setTimeout(mytimer,3000,numbers)
+
+
+function mytimer(numeriCorrenti){
+    
+    document.getElementById("listaNumeri").innerHTML ="";          /* cosi facendo rendiamo invisibile la lista dei numeri dopo i 30 secondi */
+    const user =[];
+    const numeriGiusti =[]
+    for ( let i = 0; i < 5; i++){
+       const numeriScelti = parseInt(prompt("quali numeri ci sono?")); 
+    if ( !isNaN(numeriScelti)){
+        user.push(numeriScelti)
+    } if(numeriCorrenti.includes(numeriScelti)){
+         numeriGiusti.push(numeriScelti)
+    }
+}
+document.getElementById("listaNumeri").innerHTML = `Hai indovinato ${numeriGiusti.length} numero validi` ; 
+
+}
+
+
+
+
+
+
+function numeriRandom( numsBlacklist, min, max){
+    let check = false;
+    let randomInt;
+
+    while ( !check ){
+        randomInt  = Math.floor(Math.random() * ((max + 1) - min) + min);
+        if ( !numsBlacklist.includes(randomInt) ){
+            check = true;
+        }
+    }
+    return randomInt;
+}
 
 
 

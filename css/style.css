@@ -1,14 +1,4 @@
-.box{
-   /*  height: 200px;
-    width: 300px; */
-    background-color: black;
-    color: white;
-    display: block;
+body{
+    background-color: aqua;
+    color: yellow;
 }
-/* .box{
-   
-     background-color: black;
-     color: white;
-     display: none;
- } 
- 
